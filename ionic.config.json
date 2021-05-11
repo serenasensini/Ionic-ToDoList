@@ -1,0 +1,7 @@
+{
+  "name": "todoslist",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "ionic-angular"
+}
