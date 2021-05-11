@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>To Do's list</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="getTasks($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Loading...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-list-header>
+      TO DO:
+    </ion-list-header>
+    <ion-item *ngFor="let item of tasks">
+      <ion-label text-wrap class="ion-text-wrap">
+        <ion-chip color="{{item.priority}}">
+          <ion-label>{{item.what}}</ion-label>
+          <ion-icon name="close" color="{{item.priority}}" (click)="setCompleted(item)"></ion-icon>
+        </ion-chip>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button color="secondary" ion-fab (click)="newTask()">+</button>
+  </ion-fab>
+
+</ion-content>
