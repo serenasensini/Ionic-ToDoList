@@ -9,5 +9,7 @@
       "launchShowDuration": 0
     }
   },
-  "cordova": {}
+  "cordova": {},
+  "hostname": "pippo",
+  "androidScheme": "https"
 }
